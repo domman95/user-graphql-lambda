@@ -1,0 +1,10 @@
+.idea
+.eslintcache
+**/*node_modules
+coverage
+lib/
+dist/
+.cache
+generated/graphql
+schema.graphql
+.DS_Store

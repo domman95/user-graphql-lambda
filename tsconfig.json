@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "~app/*": ["./src/*"],
+      //"~api/*": ["./src/api/*"],
+      "~generated/*": ["./generated/*"]
+    }
+  },
+  "exclude": [
+    "./node_modules"
+  ]
+}

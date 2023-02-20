@@ -1,0 +1,75 @@
+{
+  "name": "graphql-scaffold",
+  "version": "1.0.0",
+  "description": "Small Standalone Scaffold",
+  "license": "ISC",
+  "scripts": {
+    "deploy": "cd src/infrastructure && cdk deploy",
+    "chimp": "chimp generate",
+    "generate": "chimp generate",
+    "postinstall": "npm run chimp",
+    "lint": "eslint --fix --ext .ts --quiet --cache src/",
+    "precommit": "lint-staged",
+    "start": "npm run start:ts",
+    "start:ts": "nodemon -r tsconfig-paths/register --config ./nodemon.run.json ./src/index.ts",
+    "test": "jest --forceExit",
+    "test:watch": "jest --watch",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch"
+  },
+  "lint-staged": {
+    "src/**/*.ts*": [
+      "eslint --fix",
+      "jest --findRelatedTests --forceExit"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
+  },
+  "dependencies": {
+    "@apollo/federation": "0.17.0",
+    "apollo-server-lambda": "^3.11.1",
+    "cookie-parser": "1.4.5",
+    "express": "4.17.1",
+    "graphql": "15.5.1",
+    "graphql-tag": "2.11.0",
+    "lodash": "4.17.19",
+    "portable-fetch": "3.0.0",
+    "tsconfig-paths": "3.9.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "1.17.7",
+    "@graphql-codegen/cli": "1.20.1",
+    "@graphql-codegen/typescript": "1.20.2",
+    "@graphql-codegen/typescript-mongodb": "1.18.0",
+    "@graphql-codegen/typescript-operations": "1.17.14",
+    "@graphql-codegen/typescript-resolvers": "1.18.1",
+    "@graphql-tools/graphql-file-loader": "6.0.14",
+    "@graphql-tools/load": "6.0.14",
+    "@graphql-tools/merge": "6.0.14",
+    "@jest/globals": "26.1.0",
+    "@types/jest": "26.0.4",
+    "@types/node": "14.0.23",
+    "@types/shelljs": "0.8.8",
+    "@typescript-eslint/eslint-plugin": "4.5.0",
+    "@typescript-eslint/parser": "4.5.0",
+    "chimp": "4.3.0",
+    "chimp-graphql-codegen-plugin": "0.1.0",
+    "eslint": "7.12.0",
+    "eslint-config-airbnb-typescript": "12.0.0",
+    "eslint-config-prettier": "6.14.0",
+    "eslint-import-resolver-typescript": "2.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "jest": "29.4.0",
+    "lint-staged": "10.2.11",
+    "nodemon": "2.0.4",
+    "prettier": "2.0.5",
+    "shelljs": "0.8.4",
+    "testdouble": "3.16.1",
+    "testdouble-jest": "2.0.0",
+    "ts-jest": "29.0.0",
+    "ts-node": "8.10.2",
+    "typescript": "4.7.4"
+  }
+}
