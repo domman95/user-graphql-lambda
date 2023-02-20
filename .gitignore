@@ -2,7 +2,6 @@
 .eslintcache
 **/*node_modules
 coverage
-lib/
 dist/
 .cache
 generated/graphql
