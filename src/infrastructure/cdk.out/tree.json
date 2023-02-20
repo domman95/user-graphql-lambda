@@ -1,0 +1,454 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Construct",
+          "version": "1.96.0"
+        }
+      },
+      "InfrastructureStack": {
+        "id": "InfrastructureStack",
+        "path": "InfrastructureStack",
+        "children": {
+          "branchName": {
+            "id": "branchName",
+            "path": "InfrastructureStack/branchName",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.96.0"
+            }
+          },
+          "UserGql": {
+            "id": "UserGql",
+            "path": "InfrastructureStack/UserGql",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "InfrastructureStack/UserGql/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "InfrastructureStack/UserGql/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-iam.CfnRole",
+                      "version": "1.96.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-iam.Role",
+                  "version": "1.96.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "InfrastructureStack/UserGql/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "InfrastructureStack/UserGql/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.AssetStaging",
+                      "version": "1.96.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "InfrastructureStack/UserGql/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.Resource",
+                      "version": "1.96.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-s3-assets.Asset",
+                  "version": "1.96.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "InfrastructureStack/UserGql/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3BucketF81DE897"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "UserGqlServiceRoleB55FC082",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                        "NODE_OPTIONS": "--enable-source-maps"
+                      }
+                    },
+                    "handler": "main.handler",
+                    "memorySize": 180,
+                    "runtime": "nodejs14.x"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-lambda.CfnFunction",
+                  "version": "1.96.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-lambda.Function",
+              "version": "1.96.0"
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "InfrastructureStack/AssetParameters",
+            "children": {
+              "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c": {
+                "id": "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
+                "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3Bucket",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.96.0"
+                    }
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3VersionKey",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.96.0"
+                    }
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/ArtifactHash",
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/core.CfnParameter",
+                      "version": "1.96.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.96.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.96.0"
+            }
+          },
+          "UserGqltestEnvCondition": {
+            "id": "UserGqltestEnvCondition",
+            "path": "InfrastructureStack/UserGqltestEnvCondition",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnCondition",
+              "version": "1.96.0"
+            }
+          },
+          "UserGqlUploadInfoExtended": {
+            "id": "UserGqlUploadInfoExtended",
+            "path": "InfrastructureStack/UserGqlUploadInfoExtended",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.96.0"
+            }
+          },
+          "UserGqlHttpApi": {
+            "id": "UserGqlHttpApi",
+            "path": "InfrastructureStack/UserGqlHttpApi",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "InfrastructureStack/UserGqlHttpApi/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Api",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "UserGqlHttpApi",
+                    "protocolType": "HTTP"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.CfnApi",
+                  "version": "1.96.0"
+                }
+              },
+              "DefaultRoute": {
+                "id": "DefaultRoute",
+                "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute",
+                "children": {
+                  "InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission": {
+                    "id": "InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission",
+                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                      "aws:cdk:cloudformation:props": {
+                        "action": "lambda:InvokeFunction",
+                        "functionName": {
+                          "Fn::GetAtt": [
+                            "UserGqlEDCC27A8",
+                            "Arn"
+                          ]
+                        },
+                        "principal": "apigateway.amazonaws.com",
+                        "sourceArn": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "arn:",
+                              {
+                                "Ref": "AWS::Partition"
+                              },
+                              ":execute-api:",
+                              {
+                                "Ref": "AWS::Region"
+                              },
+                              ":",
+                              {
+                                "Ref": "AWS::AccountId"
+                              },
+                              ":",
+                              {
+                                "Ref": "UserGqlHttpApiBE2F80F2"
+                              },
+                              "/*/*"
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-lambda.CfnPermission",
+                      "version": "1.96.0"
+                    }
+                  },
+                  "HttpIntegration-74a284b250167fd468501c33cfcd80af": {
+                    "id": "HttpIntegration-74a284b250167fd468501c33cfcd80af",
+                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Integration",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Ref": "UserGqlHttpApiBE2F80F2"
+                            },
+                            "integrationType": "AWS_PROXY",
+                            "integrationUri": {
+                              "Fn::GetAtt": [
+                                "UserGqlEDCC27A8",
+                                "Arn"
+                              ]
+                            },
+                            "payloadFormatVersion": "2.0"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-apigatewayv2.CfnIntegration",
+                          "version": "1.96.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.HttpIntegration",
+                      "version": "1.96.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Ref": "UserGqlHttpApiBE2F80F2"
+                        },
+                        "routeKey": "$default",
+                        "target": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "integrations/",
+                              {
+                                "Ref": "UserGqlHttpApiDefaultRouteHttpIntegration74a284b250167fd468501c33cfcd80af269755BD"
+                              }
+                            ]
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.CfnRoute",
+                      "version": "1.96.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.HttpRoute",
+                  "version": "1.96.0"
+                }
+              },
+              "DefaultStage": {
+                "id": "DefaultStage",
+                "path": "InfrastructureStack/UserGqlHttpApi/DefaultStage",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultStage/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Ref": "UserGqlHttpApiBE2F80F2"
+                        },
+                        "stageName": "$default",
+                        "autoDeploy": true
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-apigatewayv2.CfnStage",
+                      "version": "1.96.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-apigatewayv2.HttpStage",
+                  "version": "1.96.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-apigatewayv2.HttpApi",
+              "version": "1.96.0"
+            }
+          },
+          "UserGqlUrl": {
+            "id": "UserGqlUrl",
+            "path": "InfrastructureStack/UserGqlUrl",
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.CfnOutput",
+              "version": "1.96.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "InfrastructureStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "InfrastructureStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnResource",
+                  "version": "1.96.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "InfrastructureStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "@aws-cdk/core.CfnCondition",
+                  "version": "1.96.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/core.Construct",
+              "version": "1.96.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/core.Stack",
+          "version": "1.96.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@aws-cdk/core.App",
+      "version": "1.96.0"
+    }
+  }
+}
