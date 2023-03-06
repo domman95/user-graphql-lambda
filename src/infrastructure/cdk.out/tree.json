@@ -12,13 +12,13 @@
           "version": "1.96.0"
         }
       },
-      "InfrastructureStack": {
-        "id": "InfrastructureStack",
-        "path": "InfrastructureStack",
+      "UsersStack": {
+        "id": "UsersStack",
+        "path": "UsersStack",
         "children": {
           "branchName": {
             "id": "branchName",
-            "path": "InfrastructureStack/branchName",
+            "path": "UsersStack/branchName",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
               "version": "1.96.0"
@@ -26,15 +26,15 @@
           },
           "UserGql": {
             "id": "UserGql",
-            "path": "InfrastructureStack/UserGql",
+            "path": "UsersStack/UserGql",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "InfrastructureStack/UserGql/ServiceRole",
+                "path": "UsersStack/UserGql/ServiceRole",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "InfrastructureStack/UserGql/ServiceRole/Resource",
+                    "path": "UsersStack/UserGql/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -79,11 +79,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "InfrastructureStack/UserGql/Code",
+                "path": "UsersStack/UserGql/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "InfrastructureStack/UserGql/Code/Stage",
+                    "path": "UsersStack/UserGql/Code/Stage",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.AssetStaging",
                       "version": "1.96.0"
@@ -91,7 +91,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "InfrastructureStack/UserGql/Code/AssetBucket",
+                    "path": "UsersStack/UserGql/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.Resource",
                       "version": "1.96.0"
@@ -105,13 +105,13 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "InfrastructureStack/UserGql/Resource",
+                "path": "UsersStack/UserGql/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3BucketF81DE897"
+                        "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3Bucket72AA93D0"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -124,7 +124,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4"
+                                      "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7"
                                     }
                                   ]
                                 }
@@ -137,7 +137,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4"
+                                      "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7"
                                     }
                                   ]
                                 }
@@ -161,7 +161,8 @@
                     },
                     "handler": "main.handler",
                     "memorySize": 180,
-                    "runtime": "nodejs14.x"
+                    "runtime": "nodejs14.x",
+                    "timeout": 15
                   }
                 },
                 "constructInfo": {
@@ -177,15 +178,15 @@
           },
           "AssetParameters": {
             "id": "AssetParameters",
-            "path": "InfrastructureStack/AssetParameters",
+            "path": "UsersStack/AssetParameters",
             "children": {
-              "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c": {
-                "id": "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
-                "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
+              "f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76": {
+                "id": "f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
+                "path": "UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3Bucket",
+                    "path": "UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/S3Bucket",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.96.0"
@@ -193,7 +194,7 @@
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3VersionKey",
+                    "path": "UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/S3VersionKey",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.96.0"
@@ -201,7 +202,7 @@
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/ArtifactHash",
+                    "path": "UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/ArtifactHash",
                     "constructInfo": {
                       "fqn": "@aws-cdk/core.CfnParameter",
                       "version": "1.96.0"
@@ -221,7 +222,7 @@
           },
           "UserGqltestEnvCondition": {
             "id": "UserGqltestEnvCondition",
-            "path": "InfrastructureStack/UserGqltestEnvCondition",
+            "path": "UsersStack/UserGqltestEnvCondition",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnCondition",
               "version": "1.96.0"
@@ -229,7 +230,7 @@
           },
           "UserGqlUploadInfoExtended": {
             "id": "UserGqlUploadInfoExtended",
-            "path": "InfrastructureStack/UserGqlUploadInfoExtended",
+            "path": "UsersStack/UserGqlUploadInfoExtended",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
               "version": "1.96.0"
@@ -237,11 +238,11 @@
           },
           "UserGqlHttpApi": {
             "id": "UserGqlHttpApi",
-            "path": "InfrastructureStack/UserGqlHttpApi",
+            "path": "UsersStack/UserGqlHttpApi",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "InfrastructureStack/UserGqlHttpApi/Resource",
+                "path": "UsersStack/UserGqlHttpApi/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Api",
                   "aws:cdk:cloudformation:props": {
@@ -256,11 +257,11 @@
               },
               "DefaultRoute": {
                 "id": "DefaultRoute",
-                "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute",
+                "path": "UsersStack/UserGqlHttpApi/DefaultRoute",
                 "children": {
-                  "InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission": {
-                    "id": "InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission",
-                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission",
+                  "UsersStackUserGqlHttpApiDefaultRouteCDA781C5-Permission": {
+                    "id": "UsersStackUserGqlHttpApiDefaultRouteCDA781C5-Permission",
+                    "path": "UsersStack/UserGqlHttpApi/DefaultRoute/UsersStackUserGqlHttpApiDefaultRouteCDA781C5-Permission",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                       "aws:cdk:cloudformation:props": {
@@ -305,11 +306,11 @@
                   },
                   "HttpIntegration-74a284b250167fd468501c33cfcd80af": {
                     "id": "HttpIntegration-74a284b250167fd468501c33cfcd80af",
-                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af",
+                    "path": "UsersStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource",
+                        "path": "UsersStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Integration",
                           "aws:cdk:cloudformation:props": {
@@ -339,7 +340,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultRoute/Resource",
+                    "path": "UsersStack/UserGqlHttpApi/DefaultRoute/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Route",
                       "aws:cdk:cloudformation:props": {
@@ -373,11 +374,11 @@
               },
               "DefaultStage": {
                 "id": "DefaultStage",
-                "path": "InfrastructureStack/UserGqlHttpApi/DefaultStage",
+                "path": "UsersStack/UserGqlHttpApi/DefaultStage",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "InfrastructureStack/UserGqlHttpApi/DefaultStage/Resource",
+                    "path": "UsersStack/UserGqlHttpApi/DefaultStage/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ApiGatewayV2::Stage",
                       "aws:cdk:cloudformation:props": {
@@ -407,7 +408,7 @@
           },
           "UserGqlUrl": {
             "id": "UserGqlUrl",
-            "path": "InfrastructureStack/UserGqlUrl",
+            "path": "UsersStack/UserGqlUrl",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnOutput",
               "version": "1.96.0"
@@ -415,11 +416,11 @@
           },
           "CDKMetadata": {
             "id": "CDKMetadata",
-            "path": "InfrastructureStack/CDKMetadata",
+            "path": "UsersStack/CDKMetadata",
             "children": {
               "Default": {
                 "id": "Default",
-                "path": "InfrastructureStack/CDKMetadata/Default",
+                "path": "UsersStack/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnResource",
                   "version": "1.96.0"
@@ -427,7 +428,7 @@
               },
               "Condition": {
                 "id": "Condition",
-                "path": "InfrastructureStack/CDKMetadata/Condition",
+                "path": "UsersStack/CDKMetadata/Condition",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnCondition",
                   "version": "1.96.0"

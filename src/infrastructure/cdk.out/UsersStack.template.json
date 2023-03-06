@@ -1,0 +1,476 @@
+{
+  "Outputs": {
+    "branchName": {
+      "Value": "branchName"
+    },
+    "UserGqlUploadInfoExtended": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "{\"entryFullPath\":\"/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/app/createApp.ts\",\"functionName\":\"",
+            {
+              "Ref": "UserGqlEDCC27A8"
+            },
+            "\"}"
+          ]
+        ]
+      },
+      "Condition": "UserGqltestEnvCondition"
+    },
+    "UserGqlUrl": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "UserGqlHttpApiBE2F80F2"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/"
+          ]
+        ]
+      }
+    }
+  },
+  "Resources": {
+    "UserGqlServiceRoleB55FC082": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGql/ServiceRole/Resource"
+      }
+    },
+    "UserGqlEDCC27A8": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3Bucket72AA93D0"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "UserGqlServiceRoleB55FC082",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "NODE_OPTIONS": "--enable-source-maps"
+          }
+        },
+        "Handler": "main.handler",
+        "MemorySize": 180,
+        "Runtime": "nodejs14.x",
+        "Timeout": 15
+      },
+      "DependsOn": [
+        "UserGqlServiceRoleB55FC082"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGql/Resource",
+        "aws:asset:path": "asset.f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
+        "aws:asset:property": "Code"
+      }
+    },
+    "UserGqlHttpApiBE2F80F2": {
+      "Type": "AWS::ApiGatewayV2::Api",
+      "Properties": {
+        "Name": "UserGqlHttpApi",
+        "ProtocolType": "HTTP"
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGqlHttpApi/Resource"
+      }
+    },
+    "UserGqlHttpApiDefaultRouteUsersStackUserGqlHttpApiDefaultRouteCDA781C5Permission0F6F1120": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UserGqlEDCC27A8",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "UserGqlHttpApiBE2F80F2"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGqlHttpApi/DefaultRoute/UsersStackUserGqlHttpApiDefaultRouteCDA781C5-Permission"
+      }
+    },
+    "UserGqlHttpApiDefaultRouteHttpIntegration74a284b250167fd468501c33cfcd80af269755BD": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "UserGqlHttpApiBE2F80F2"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "UserGqlEDCC27A8",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0"
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource"
+      }
+    },
+    "UserGqlHttpApiDefaultRouteD16E3260": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "UserGqlHttpApiBE2F80F2"
+        },
+        "RouteKey": "$default",
+        "Target": {
+          "Fn::Join": [
+            "",
+            [
+              "integrations/",
+              {
+                "Ref": "UserGqlHttpApiDefaultRouteHttpIntegration74a284b250167fd468501c33cfcd80af269755BD"
+              }
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGqlHttpApi/DefaultRoute/Resource"
+      }
+    },
+    "UserGqlHttpApiDefaultStageAB13FB04": {
+      "Type": "AWS::ApiGatewayV2::Stage",
+      "Properties": {
+        "ApiId": {
+          "Ref": "UserGqlHttpApiBE2F80F2"
+        },
+        "StageName": "$default",
+        "AutoDeploy": true
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/UserGqlHttpApi/DefaultStage/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAAE12P0WrDMAxFv6Xvjrps0LG3lUJZn1qyL9AcLait7WDJLcP43xdnhI093Xutg67cwssGHlaveJfG9pd1tiES5HdFezG7T39MOiY1WxHS6XFgP5iOJKRoyeyCF43JaiVPGNGRUqxhmvSsHHwNC19MbclXdB89Qt4nbxfkrz9RdCwypWIYHeQuXGneM2kx8tRgvUZgPsrgyAMq3fHr9gj5TXXcjlzxKjV2ISnN7uCVhohL0b/4y9WPzo2zKaUYH3qCs6xv7QbaZ2hXZ2FuYvLKjqD70W9tqo98TAEAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "UsersStack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Parameters": {
+    "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3Bucket72AA93D0": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76\""
+    },
+    "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76\""
+    },
+    "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76ArtifactHash59F1AB94": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76\""
+    }
+  },
+  "Conditions": {
+    "UserGqltestEnvCondition": {
+      "Fn::Equals": [
+        "",
+        "test"
+      ]
+    },
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "af-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

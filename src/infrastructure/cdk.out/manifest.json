@@ -7,38 +7,38 @@
         "file": "tree.json"
       }
     },
-    "InfrastructureStack": {
+    "UsersStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "InfrastructureStack.template.json"
+        "templateFile": "UsersStack.template.json"
       },
       "metadata": {
-        "/InfrastructureStack": [
+        "/UsersStack": [
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
-              "id": "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
+              "path": "asset.f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
+              "id": "f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
               "packaging": "zip",
-              "sourceHash": "6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c",
-              "s3BucketParameter": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3BucketF81DE897",
-              "s3KeyParameter": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4",
-              "artifactHashParameter": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cArtifactHashEE2EAB8A"
+              "sourceHash": "f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76",
+              "s3BucketParameter": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3Bucket72AA93D0",
+              "s3KeyParameter": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7",
+              "artifactHashParameter": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76ArtifactHash59F1AB94"
             },
             "trace": [
               "ConstructNode.addMetadata (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/construct-compat.ts:437:92)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
-              "InfrastructureStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
+              "UsersStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
               "new Asset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:145:40)",
               "AssetCode.bind (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/code.ts:277:20)",
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:583:29)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -59,13 +59,13 @@
             ]
           }
         ],
-        "/InfrastructureStack/branchName": [
+        "/UsersStack/branchName": [
           {
             "type": "aws:cdk:logicalId",
             "data": "branchName",
             "trace": [
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:20:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:20:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -86,7 +86,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGql/ServiceRole/Resource": [
+        "/UsersStack/UserGql/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlServiceRoleB55FC082",
@@ -95,8 +95,8 @@
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:563:31)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -117,7 +117,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGql/Resource": [
+        "/UsersStack/UserGql/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlEDCC27A8",
@@ -125,8 +125,8 @@
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:625:35)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -147,23 +147,23 @@
             ]
           }
         ],
-        "/InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3Bucket": [
+        "/UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3BucketF81DE897",
+            "data": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3Bucket72AA93D0",
             "trace": [
               "new FileAssetParameters (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
-              "InfrastructureStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
+              "UsersStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
               "new Asset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:145:40)",
               "AssetCode.bind (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/code.ts:277:20)",
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:583:29)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -184,23 +184,23 @@
             ]
           }
         ],
-        "/InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/S3VersionKey": [
+        "/UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cS3VersionKeyBA15C3B4",
+            "data": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76S3VersionKeyC6BD1CA7",
             "trace": [
               "new FileAssetParameters (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
-              "InfrastructureStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
+              "UsersStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
               "new Asset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:145:40)",
               "AssetCode.bind (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/code.ts:277:20)",
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:583:29)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -221,23 +221,23 @@
             ]
           }
         ],
-        "/InfrastructureStack/AssetParameters/6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780c/ArtifactHash": [
+        "/UsersStack/AssetParameters/f3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters6a364f868420f9c0e11a40889a987f253882995432a5d096f6472edaa51b780cArtifactHashEE2EAB8A",
+            "data": "AssetParametersf3fdea2725eb316d0eaf96971d99e88571b1e96d52a36c0cf72b7e826c5cfa76ArtifactHash59F1AB94",
             "trace": [
               "new FileAssetParameters (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
-              "InfrastructureStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
+              "UsersStack.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack.ts:665:29)",
               "LegacyStackSynthesizer.addFileAsset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
               "new Asset (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:145:40)",
               "AssetCode.bind (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/code.ts:277:20)",
               "new Function (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function.ts:583:29)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:65:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -258,15 +258,15 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqltestEnvCondition": [
+        "/UsersStack/UserGqltestEnvCondition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqltestEnvCondition",
             "trace": [
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:73:24)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -287,15 +287,15 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlUploadInfoExtended": [
+        "/UsersStack/UserGqlUploadInfoExtended": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlUploadInfoExtended",
             "trace": [
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:71:9)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -316,7 +316,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlHttpApi/Resource": [
+        "/UsersStack/UserGqlHttpApi/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlHttpApiBE2F80F2",
@@ -324,8 +324,8 @@
               "new HttpApi (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:343:22)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:85:25)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -346,10 +346,10 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlHttpApi/DefaultRoute/InfrastructureStackUserGqlHttpApiDefaultRoute6742828D-Permission": [
+        "/UsersStack/UserGqlHttpApi/DefaultRoute/UsersStackUserGqlHttpApiDefaultRouteCDA781C5-Permission": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "UserGqlHttpApiDefaultRouteInfrastructureStackUserGqlHttpApiDefaultRoute6742828DPermission7F866586",
+            "data": "UserGqlHttpApiDefaultRouteUsersStackUserGqlHttpApiDefaultRouteCDA781C5Permission0F6F1120",
             "trace": [
               "ToolkitFunction.addPermission (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:245:5)",
               "LambdaProxyIntegration.bind (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2-integrations/lib/http/lambda.ts:39:24)",
@@ -357,8 +357,8 @@
               "new HttpApi (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:351:7)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:85:25)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -379,7 +379,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource": [
+        "/UsersStack/UserGqlHttpApi/DefaultRoute/HttpIntegration-74a284b250167fd468501c33cfcd80af/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlHttpApiDefaultRouteHttpIntegration74a284b250167fd468501c33cfcd80af269755BD",
@@ -390,8 +390,8 @@
               "new HttpApi (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:351:7)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:85:25)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -412,7 +412,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlHttpApi/DefaultRoute/Resource": [
+        "/UsersStack/UserGqlHttpApi/DefaultRoute/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlHttpApiDefaultRouteD16E3260",
@@ -421,8 +421,8 @@
               "new HttpApi (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:351:7)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:85:25)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -443,7 +443,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlHttpApi/DefaultStage/Resource": [
+        "/UsersStack/UserGqlHttpApi/DefaultStage/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlHttpApiDefaultStageAB13FB04",
@@ -452,8 +452,8 @@
               "new HttpApi (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:359:27)",
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:85:25)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -474,15 +474,15 @@
             ]
           }
         ],
-        "/InfrastructureStack/UserGqlUrl": [
+        "/UsersStack/UserGqlUrl": [
           {
             "type": "aws:cdk:logicalId",
             "data": "UserGqlUrl",
             "trace": [
               "new TypeScriptFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/typeScriptFunction.js:91:13)",
               "new ToolkitFunction (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/cdk-typescript-tooling/build/getConfiguredTypeScriptFunction.js:80:17)",
-              "new InfrastructureStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/infrastructure-stack.ts:26:5)",
-              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/infrastructure.ts:7:1)",
+              "new UsersStack (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/lib/users-stack.ts:26:5)",
+              "Object.<anonymous> (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/bin/users.ts:7:1)",
               "Module._compile (node:internal/modules/cjs/loader:1126:14)",
               "Module.m._compile (/Users/dominiklasek/Files/Programming/AWS-training/user-graphql-lambda-stack/src/infrastructure/node_modules/ts-node/src/index.ts:1618:23)",
               "Module._extensions..js (node:internal/modules/cjs/loader:1180:10)",
@@ -503,7 +503,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/CDKMetadata/Default": [
+        "/UsersStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata",
@@ -523,7 +523,7 @@
             ]
           }
         ],
-        "/InfrastructureStack/CDKMetadata/Condition": [
+        "/UsersStack/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable",
