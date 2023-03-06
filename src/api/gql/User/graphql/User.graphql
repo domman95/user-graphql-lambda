@@ -7,3 +7,17 @@ type User {
   name: String!
   age: String!
 }
+
+type Mutation {
+  addUser(id: ID!, name: String!, age: String!): AckNack!
+}
+
+enum Status {
+    ACK
+    NACK
+}
+
+type AckNack {
+    status: Status!
+    exception: String
+}

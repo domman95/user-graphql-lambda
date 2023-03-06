@@ -6,7 +6,6 @@
     "baseUrl": "./",
     "paths": {
       "~app/*": ["./src/*"],
-      //"~api/*": ["./src/api/*"],
       "~generated/*": ["./generated/*"]
     }
   },
